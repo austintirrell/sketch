@@ -22,15 +22,15 @@ h1 {
 }
 #grid {
     display: grid;
-    grid-template-columns: repeat(auto, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     background: #FFFFFF;
     width: 500px;
     height: 500px;
     margin: .5rem;
 }
 .pixel {
-    border: .5px solid black;
+    border: .5px solid #e4e4e4;
 }
 .controls {
     display: flex;
@@ -72,10 +72,11 @@ button {
 footer {
     position: absolute;
     bottom: 0;
+}
+footer a {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
+    align-items: center;
 }
 #githubIcon {
     width: 25px;
