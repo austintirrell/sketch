@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>sketch</title>
+  <meta name="description" content="sketch and draw">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>sketch</h1>
+
+  <div class="main">
+    <div id="grid"></div> <!-- This will contain all other divs -->
+
+    <div class="controls">
+      <div class="gridChanger">
+        <p id="gridSizeDisplay">16</p>
+        <input id="gridSize" type="range" min="16" max="128" value="16">
+      </div>
+      <div class="colorControls">
+        <input id="colorPicker" type="color">
+        <button id="colorMode">color</button>
+      </div>
+      <button id="rainbowMode">rainbow</button>
+      <button id="eraseMode">eraser</button>
+      <button id="resetButton">reset</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright © <a href="https://github.com/austintirrell">Austin Tirrell</a></p>
+    <a href="https://github.com/austintirrell"><div id="githubIcon"></div></a>
+  </footer>
+
+  <script src="script.js" async defer></script>
+</body>
+
+</html>
