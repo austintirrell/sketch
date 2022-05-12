@@ -37,7 +37,7 @@ function construct() {
             if (mode == 'color') {
                 pixel.style.background = String(colorPicker.value)
             } else if (mode == 'rainbow') {
-                pixel.style.background = '#'+rainbow()+rainbow()+rainbow()
+                pixel.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
             } else if (mode == 'eraser') {
                 pixel.style.background = '#FFFFFF'
             } else {
@@ -52,7 +52,7 @@ function construct() {
 }
 
 function rainbow() {
-    let num = Math.floor(Math.random() * 6)
-    let values = ['A','B','C','D','E','F']
+    let num = Math.floor(Math.random() * 15)
+    let values = ['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     return values[num]
 }
