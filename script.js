@@ -45,7 +45,6 @@ function construct() {
             }
         })
         grid.appendChild(pixel)
-        grid.lastChild.classList.add('pixel')
     }
     grid.style.gridTemplateColumns = 'repeat('+gridSize.value+', 1fr)'
     grid.style.gridTemplateRows = 'repeat('+gridSize.value+', 1fr)'
