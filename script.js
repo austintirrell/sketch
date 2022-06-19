@@ -16,12 +16,15 @@ gridSize.addEventListener('input', function() {
 })
 colorButton.addEventListener('click', function() {
     mode = 'color'
+    toggleButtons(mode)
 })
 rainbowButton.addEventListener('click', function() {
     mode = 'rainbow'
+    toggleButtons(mode)
 })
 eraserButton.addEventListener('click', function() {
     mode = 'eraser'
+    toggleButtons(mode)
 })
 resetButton.addEventListener('click', function() {
     construct()
@@ -55,3 +58,22 @@ function rainbow() {
     let values = ['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
     return values[num]
 }
+<<<<<<< HEAD
+
+function toggleButtons(mode) {
+    if (mode == 'color') {
+        colorButton.classList.add('active')
+        rainbowButton.classList.remove('active')
+        eraserButton.classList.remove('active')
+    } else if (mode == 'rainbow') {
+        rainbowButton.classList.add('active')
+        colorButton.classList.remove('active')
+        eraserButton.classList.remove('active')
+    } else if (mode == 'eraser') {
+        eraserButton.classList.add('active')
+        colorButton.classList.remove('active')
+        rainbowButton.classList.remove('active')
+    }
+}
+=======
+>>>>>>> 780b6aa3ee92f5249ba3d2a0456b5636133f9a62
