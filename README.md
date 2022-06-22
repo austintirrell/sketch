@@ -1,6 +1,6 @@
 # sketch app
 
-## [Live Preview](https://austintirrell.github.io/resume)
+## [Live Preview](https://austintirrell.github.io/sketch)
 
 ### What I learned during this project:
 Read history for a better background, but this time around the hardest part to figure out was the grid layout of each pixel, and how to make it organize itself based on how many pixels are selected. Looking back now the answer was extremely simple, just edit grid-template-rows and grid-template-columns each time the size of the board is changed. That being said, I still was able to get this all done in one night, which was extremely exciting for me.
