@@ -30,6 +30,7 @@ eraserButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     construct()
 })
+
 document.body.addEventListener('mousedown', () => {
     mouseDown = true
 })
@@ -44,22 +45,30 @@ function construct() {
     }
     for (i=0; i < gridSize.value * gridSize.value; i++) {
         let pixel = document.createElement('div')
+        pixel.createAttribute('draggable', 'false')
         pixel.addEventListener('mouseover', () => {
-            if (mouseDown == false) {
-            return
-            }
-            if (mode == 'color') {
-                pixel.style.background = String(colorPicker.value)
-            } else if (mode == 'rainbow') {
-                pixel.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
-            } else if (mode == 'eraser') {
-                pixel.style.background = '#FFFFFF'
-            }
+            changeColor()
+        })
+        pixel.addEventListener('mousedown', () => {
+            changeColor()
         })
         grid.appendChild(pixel)
     }
     grid.style.gridTemplateColumns = 'repeat('+gridSize.value+', 1fr)'
     grid.style.gridTemplateRows = 'repeat('+gridSize.value+', 1fr)'
+}
+
+function changeColor(e) {
+    if (e.type === 'mouseover' && !mouseDown) {
+        return
+    }
+    if (mode == 'color') {
+        e.target.style.background = String(colorPicker.value)
+    } else if (mode == 'rainbow') {
+        e.target.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
+    } else if (mode == 'eraser') {
+        e.target.style.background = '#FFFFFF'
+    }
 }
 
 function rainbow() {
