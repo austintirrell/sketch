@@ -59,7 +59,7 @@ function construct() {
 }
 
 function changeColor(e) {
-    if (e.type === 'mouseover' && mouseDown == false) {
+    if (mouseDown == false) {
         return
     }
     if (mode == 'color') {
