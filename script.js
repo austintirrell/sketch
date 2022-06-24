@@ -10,41 +10,40 @@ let mode = 'color'
 
 window.onload = construct()
 
-gridSize.addEventListener('input', function() {
+gridSize.addEventListener('input', () => {
     gridSizeDisplay.innerHTML = gridSize.value
     construct()
 })
-colorButton.addEventListener('click', function() {
+colorButton.addEventListener('click', () => {
     mode = 'color'
     toggleButtons(mode)
 })
-rainbowButton.addEventListener('click', function() {
+rainbowButton.addEventListener('click', () => {
     mode = 'rainbow'
     toggleButtons(mode)
 })
-eraserButton.addEventListener('click', function() {
+eraserButton.addEventListener('click', () => {
     mode = 'eraser'
     toggleButtons(mode)
 })
-resetButton.addEventListener('click', function() {
+resetButton.addEventListener('click', () => {
     construct()
 })
 
 function construct() {
+    toggleButtons()
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild)
     }
     for (i=0; i < gridSize.value * gridSize.value; i++) {
         let pixel = document.createElement('div')
-        pixel.addEventListener('mouseover', function() {
+        pixel.addEventListener('mousedown', () => {
             if (mode == 'color') {
                 pixel.style.background = String(colorPicker.value)
             } else if (mode == 'rainbow') {
                 pixel.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
             } else if (mode == 'eraser') {
                 pixel.style.background = '#FFFFFF'
-            } else {
-                console.log('That should not happen')
             }
         })
         grid.appendChild(pixel)
@@ -59,7 +58,7 @@ function rainbow() {
     return values[num]
 }
 
-function toggleButtons(mode) {
+function toggleButtons() {
     if (mode == 'color') {
         colorButton.classList.add('active')
         rainbowButton.classList.remove('active')
