@@ -45,7 +45,7 @@ function construct() {
     }
     for (i=0; i < gridSize.value * gridSize.value; i++) {
         let pixel = document.createElement('div')
-        pixel.createAttribute('draggable', 'false')
+        pixel.setAttribute('draggable', 'false')
         pixel.addEventListener('mouseover', () => {
             changeColor()
         })
