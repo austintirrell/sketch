@@ -47,10 +47,25 @@ function construct() {
         let pixel = document.createElement('div')
         pixel.setAttribute('draggable', 'false')
         pixel.addEventListener('mouseover', () => {
-            changeColor()
+            if (mouseDown == false) {
+                return
+            }
+            if (mode == 'color') {
+                pixel.style.background = String(colorPicker.value)
+            } else if (mode == 'rainbow') {
+                pixel.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
+            } else if (mode == 'eraser') {
+                pixel.style.background = '#FFFFFF'
+            }
         })
         pixel.addEventListener('mousedown', () => {
-            changeColor()
+            if (mode == 'color') {
+                pixel.style.background = String(colorPicker.value)
+            } else if (mode == 'rainbow') {
+                pixel.style.background = '#'+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()+rainbow()
+            } else if (mode == 'eraser') {
+                pixel.style.background = '#FFFFFF'
+            }
         })
         grid.appendChild(pixel)
     }
