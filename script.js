@@ -16,15 +16,15 @@ gridSize.addEventListener('input', () => {
 })
 colorButton.addEventListener('click', () => {
     mode = 'color'
-    toggleButtons(mode)
+    toggleButtons()
 })
 rainbowButton.addEventListener('click', () => {
     mode = 'rainbow'
-    toggleButtons(mode)
+    toggleButtons()
 })
 eraserButton.addEventListener('click', () => {
     mode = 'eraser'
-    toggleButtons(mode)
+    toggleButtons()
 })
 resetButton.addEventListener('click', () => {
     construct()
