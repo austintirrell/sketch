@@ -7,6 +7,7 @@ const rainbowButton = document.getElementById('rainbow')
 const eraserButton = document.getElementById('erase')
 const resetButton = document.getElementById('reset')
 let mode = 'color'
+let mouseDown = false
 
 window.onload = construct()
 
@@ -29,6 +30,12 @@ eraserButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     construct()
 })
+document.body.addEventListener('mousedown', () => {
+    mouseDown = true
+})
+document.body.addEventListener('mouseup', () => {
+    mouseDown = false
+})
 
 function construct() {
     toggleButtons()
@@ -37,7 +44,10 @@ function construct() {
     }
     for (i=0; i < gridSize.value * gridSize.value; i++) {
         let pixel = document.createElement('div')
-        pixel.addEventListener('mousedown', () => {
+        pixel.addEventListener('mouseover', () => {
+            if (mouseDown == false) {
+            return
+            }
             if (mode == 'color') {
                 pixel.style.background = String(colorPicker.value)
             } else if (mode == 'rainbow') {
